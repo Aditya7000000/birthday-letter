@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Birthday Letter</title>
+  <style>
+    body {
+      background: #fff3f3;
+      font-family: 'Georgia', serif;
+      color: #333;
+      padding: 60px 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff4081;
+      margin-bottom: 50px;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: appear 0.8s ease forwards;
+    }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Your Birthday Letter</h1>
+
+<div id="letter">
+  <!-- Lines will appear one-by-one -->
+</div>
+
+<script>
+  const lines = [
+    "Dear Garima,",
+    "Today is all about you – your smile, your laughter, and your beautiful heart.",
+    "I feel so lucky to know someone as kind and inspiring as you.",
+    "May this year bring you closer to your dreams and surround you with love.",
+    "Remember, you are stronger than you think and more loved than you know.",
+    "On this birthday, I hope you pause and feel proud of how far you’ve come.",
+    "Keep shining, keep smiling, and never stop being YOU.",
+    "Wishing you endless joy, peace, and unforgettable moments.",
+    "Happy Birthday once again, from the bottom of my heart.",
+    "With love,",
+    "— From Aditya 💖"
+  ];
+
+  const container = document.getElementById('letter');
+
+  lines.forEach((line, index) => {
+    const p = document.createElement('p');
+    p.className = 'line';
+    p.style.animationDelay = `${index * 1.2}s`;
+    p.textContent = line;
+    container.appendChild(p);
+  });
+</script>
+
+</body>
+</html>
